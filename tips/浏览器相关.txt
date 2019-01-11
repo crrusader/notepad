@@ -1,0 +1,19 @@
+window.location -->浏览器地址栏
+status：
+	304：已缓存
+	200：第一次请求
+	404：not found
+浏览器时间为格林威治时间，加上8小时为北京时间
+浏览器默认请求为get，可以更改为post
+
+
+//设置浏览器title时间
+    setInterval(function(){
+    	document.title='It is now'+(new Date());
+    }, 1000);
+
+重新定义控制台的console.log样式
+var _log = console.log;
+console.log = function() {
+    _log.call(console, '%c' + [].slice.call(arguments).join(' '),'color:transparent;text-shadow:0 0 2px rgba(0,0,0,.5);');
+};

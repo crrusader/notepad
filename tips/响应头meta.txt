@@ -1,0 +1,14 @@
+<meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; style-src cdn.example.org third-party.org; child-src https:">
+
+脚本：只信任当前域名
+<object>标签：不信任任何URL，即不加载任何资源
+样式表：只信任cdn.example.org和third-party.org
+框架（frame）：必须使用HTTPS协议加载
+其他资源：没有限制
+
+X-XSS-Protection
+0 – 关闭对浏览器的xss防护  
+1 – 开启xss防护  1; 
+mode=block – 开启xss防护并通知浏览器阻止而不是过滤用户注入的脚本。  1; report=http://site.com/report – 这个只有chrome和webkit内核的浏览器支持，这种模式告诉浏览器当发现疑似xss攻击的时候就将这部分数据post到指定地址。
+
+Content-Type: application/x-www-form-urlencoded   --> post请求需要的

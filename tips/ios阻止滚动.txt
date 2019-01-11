@@ -1,0 +1,6 @@
+// ios11.3×èÖ¹¹ö¶¯Ê§Ð§
+			var preventE = function (e) {
+				e.preventDefault();
+			}
+document.body.addEventListener('touchmove',preventE , {passive: false});
+document.body.removeEventListener('touchmove', preventE,{passive: true});

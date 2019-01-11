@@ -1,0 +1,28 @@
+内置api：moveTo();lineTo();stroke();fill();strokeStyle();fillStyle();beginPath();closePath();
+	lineWidth=num;-->数字
+	lineCap=butt/round/square;
+	lineJoin=miter/round/bevel;
+	miterLimit=num;//设置或返回最大斜接长度
+	setLineDash([num,num]); //设置线长度,虚线长度,一直交替
+	getLineDash(); //获得一个虚线设置的数组
+	lineDashOffset=num; //设置虚线偏移值
+
+绘制api：rect(x,y,w,h);strokeRect();fillRect(); //矩形
+	 arc(x,y,r,sr,er,t/f); //圆弧 sr re-->开始和结束弧度
+			//false为顺时针，true为逆时针
+	
+
+画圆的时候角度弧度互相转化：☆☆☆☆
+
+画圆：canvas.getContext("2d").arc(x,y,radius,fromRadian,toRadian,true/false)
+radian填的是弧度值，2π表示一圈；
+角度：angle=radian/π*180；
+弧度：radian=angle/180*π；
+最后一个参数表示是顺时针绘制还是逆时针绘制。
+记住  angle/radian=180/π；
+圆弧的绘制起点为y=0；x在正方向的radius的位置；
+处理图片的代码要放在onload事件里，否则获取不到；
+
+清除矩形：☆☆☆☆☆
+	1. ctx.clearRect(fromX,fromY,toX,toY);
+	2. canvas.width = canvas.width; -->默认清空画布，即重新开启一张画布

@@ -1,0 +1,28 @@
+样式错乱：体现在头部的input继承了父级的line-height却没有生效，导致input上对齐；起初以为是line-height失效，或者其他样式影响，然后加了display:list-item;先解决问题。
+根本原因：后台嵌套时没有写<!DOCTYPE html>
+
+图片经过计算后宽或高后面带小数点
+$('.ele')[n].getBoundingClientRect().width  => 能获取带小数点的宽或高
+
+:nth-child(n) => n从0开始
+
+package.json中dependencies和devDependencies区别：
+dependencies是项目正常运行所需要的依赖
+DevDependencies是项目开发所需要的依赖，比如grunt运行环境，代码解析的包之类
+
+flex布局注意点：
+1.父元素display:flex之后成为伸缩容器，子元素（除了position:absolute或fixed）无论是display:block或者display:inline，都成为了伸缩项目。
+2.可以固定一个伸缩项目的宽度，另一个伸缩项目自适应。
+3.伸缩项目之间的空白自适应。
+4.可以很方便进行水平和垂直方向的，居左，居中，居右，两边对齐等效果。
+5.android浏览器4.4之前对于flex布局支持不好。
+6.伸缩项目之间，没有inline-block元素之间的空隙。
+7.伸缩项目自动box-sizing:border-box。
+
+sort函数通过传入一个function执行排序操作，通过返回0和正负数来比大小排序，如果不传function则为字符编码的顺序进行排序
+
+快速执行函数有以下几个
+~function(){}()
++function(){}()
+-function(){}()
+(function(){})

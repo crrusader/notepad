@@ -1,0 +1,136 @@
+@charset "utf-8";
+.scroll-gallery {
+  clear: both !important;
+}
+.scroll-gallery:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-gallery:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-gallery ul {
+  width: 10000%;
+}
+.scroll-gallery ul li {
+  width: 157px;
+  display: block;
+}
+.scroll-gallery ul li a {
+  display: block;
+  padding: 5px;
+}
+.scroll-gallery > div {
+  margin: 0 50px;
+}
+.scroll-gallery .scroll-btn-prev,
+.scroll-gallery .scroll-btn-next {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  margin-top: -20px;
+}
+.scroll-gallery.scroll-gallery-res ul {
+  width: 100%;
+}
+.scroll-gallery.scroll-gallery-res ul li {
+  width: 25%;
+}
+.scroll-gallery.axis-y {
+  width: 157px;
+  padding: 35px 0;
+}
+.scroll-gallery.axis-y > div {
+  margin: 0;
+  height: 400px;
+}
+.scroll-gallery.axis-y ul {
+  width: 100%;
+}
+.scroll-gallery.axis-y .scroll-btn-prev,
+.scroll-gallery.axis-y .scroll-btn-next {
+  height: auto;
+  left: 0;
+  margin: 0;
+  width: 100%;
+}
+.scroll-text {
+  clear: both !important;
+}
+.scroll-text:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-text:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-text > div {
+  margin: 0 60px;
+}
+.scroll-text .scroll-btn-prev,
+.scroll-text .scroll-btn-next {
+  margin: -20px 0 0 0;
+  padding: 0;
+}
+.scroll-iscroll {
+  clear: both !important;
+}
+.scroll-iscroll:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-iscroll:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-iscroll .scroller-wrap > ul {
+  overflow: hidden;
+}
+.scroll-iscroll-text {
+  clear: both !important;
+}
+.scroll-iscroll-text:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-iscroll-text:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll-iscroll-text .scroller-wrap {
+  max-height: 350px;
+}

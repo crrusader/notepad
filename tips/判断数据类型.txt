@@ -1,0 +1,25 @@
+var toString = Object.prototype.toString;
+
+toString.call(123); //"[object Number]"
+toString.call('abcdef'); //"[object String]"
+toString.call(true); //"[object Boolean]"
+toString.call([1, 2, 3, 4]); //"[object Array]"
+toString.call({name:'wenzi', age:25}); //"[object Object]"
+toString.call(function(){ console.log('this is function'); }); //"[object Function]"
+toString.call(undefined); //"[object Undefined]"
+toString.call(null); //"[object Null]"
+toString.call(new Date()); //"[object Date]"
+toString.call(/^[a-zA-Z]{5,20}$/); //"[object RegExp]"
+toString.call(new Error()); //"[object Error]"
+
+function gettype(obj) {
+  var type = typeof obj;
+
+  if (type !== 'object') {
+    return type;
+  }
+  //如果不是object类型的数据，直接用typeof就能判断出来
+
+  //如果是object类型数据，准确判断类型必须使用Object.prototype.toString.call(obj)的方式才能判断
+  return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1');
+}

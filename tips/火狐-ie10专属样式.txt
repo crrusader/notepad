@@ -1,0 +1,10 @@
+@-moz-document url-prefix() {
+			.container .spieth-subscribe button{
+				margin-top: 0px;
+			}
+		}
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+   /* IE10¡¢11-specific styles go here */  
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+        <style>
+            html,body{
+                padding: 0;
+                margin: 0;
+            }
+            .dragbar{
+                width: 100%;
+                height: 35px;
+                background: pink;
+                position: relative;
+                overflow: scroll;
+            }
+            .bar{
+                height: 31px;
+                width: 100%;
+                background: silver;
+                position: fixed;
+                top: 2px;
+            }
+            .content{
+                padding: 0 10px;
+                margin: 2px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="dragbar">
+            <div class="bar"></div>
+            <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore in voluptate aut nobis earum eum illo soluta fugiat facilis nostrum neque incidunt aspernatur officiis illum, est impedit voluptates cupiditate, sint obcaecati molestias consectetur? Ipsum quae ullam totam dolorem iure quis porro aut, eligendi labore odio a? Soluta, suscipit, voluptates. Veniam molestias nobis natus delectus nam quisquam architecto consequuntur repellendus fugit reprehenderit reiciendis adipisci error autem, alias nulla praesentium inventore quaerat nostrum, expedita aspernatur veritatis eaque est dicta excepturi! Mollitia quod ducimus sint architecto similique, dolore nostrum, quia, tempore sunt dicta autem quaerat provident eaque quidem dolorum eos natus qui repudiandae non voluptatem ut enim animi recusandae numquam voluptate. Pariatur tempora vitae recusandae at labore ab quia totam sequi quas saepe cum accusamus ducimus minima molestias quam officia dolorem itaque, et fugit voluptatibus quod in! Sequi repellendus ipsum vero odit minima incidunt aliquid assumenda, dolores, et perspiciatis, dolorem itaque nemo cupiditate esse possimus dicta exercitationem dignissimos ratione quis praesentium. Ex deleniti error voluptatibus, ipsa reiciendis tempora dolores facere atque commodi, ullam voluptas expedita quaerat quis aliquid dicta, aut veritatis quisquam impedit. Optio provident, quidem. Expedita obcaecati assumenda nobis odit ratione, qui sint suscipit ea repudiandae, dolores blanditiis illum minus nemo voluptatibus architecto nihil animi omnis deleniti repellat. Dolorem aperiam aspernatur iure id, sint velit eligendi sit vitae deserunt beatae debitis molestias ipsum dicta voluptatibus labore, doloribus. Repudiandae ipsam placeat deserunt, mollitia sint. Eum nihil nobis earum quia quod animi, accusamus alias esse, commodi quibusdam hic facere cum ea quo consequatur iusto beatae, vel magnam. Reprehenderit minus at, ex cupiditate dignissimos ipsa, tempore eligendi vitae! Libero eveniet numquam at, quod ea totam ex beatae expedita vitae fugiat. Facere quo dicta voluptatibus illum eius earum est magni ipsam, magnam ut veritatis vel cumque minima eos voluptatum unde, excepturi voluptate, vitae eum explicabo sunt.
+            </div>
+        </div>
+        <script type="text/javascript">
+            // 常量
+            const HEIGHT = document.querySelector('.dragbar').offsetHeight,
+                _bar = document.querySelector('.bar');
+            _bar.addEventListener('touchstart',(e) => {
+                let y = e.targetTouches[0].pageY;
+
+                _bar.parentNode.style.transition = 'none'
+                _bar.style.transition = 'none'
+                _bar.style.top = y - 15 + 'px'
+
+                if(y <= HEIGHT){
+
+                }else{
+                    _bar.parentNode.style.height = y + 'px'
+                }
+            })
+            _bar.addEventListener('touchmove',(e) => {
+                let y = e.targetTouches[0].pageY;
+                if(y <= HEIGHT){
+
+                }else{
+                    _bar.parentNode.style.height = y + 'px'
+                }
+                _bar.style.top = y - 15 + 'px'
+                e.preventDefault()
+            })
+            _bar.addEventListener('touchend',(e) => {
+                let y = e.changedTouches[0].pageY,
+                    _windowH = window.innerHeight;
+                if(y > _windowH * 0.6){
+                    _bar.parentNode.style.height = _windowH + 'px'
+                    _bar.style.top = _windowH - 33 + 'px'
+                }else{
+                    _bar.parentNode.style.height = HEIGHT + 'px'
+                    _bar.style.top = 2 + 'px'
+                }
+                _bar.parentNode.style.transition = 'all .3s'
+                _bar.style.transition = 'all .3s'
+            })
+        </script>
+    </body>
+</html>

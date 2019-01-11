@@ -1,0 +1,147 @@
+@charset "utf-8";
+/*下拉框样式*/
+select.dropdown,
+select.form-select {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 5px 10px;
+  color: #363d4c;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.dropdown,
+div.form-select {
+  position: relative;
+  width: 100%;
+}
+div.dropdown .btn,
+div.form-select .btn {
+  display: block;
+  border-color: #dddddd;
+  padding: 5px 10px;
+  cursor: default;
+}
+div.dropdown .btn .fa,
+div.form-select .btn .fa {
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  right: 10px;
+}
+div.dropdown .btn i.icon-caret,
+div.form-select .btn i.icon-caret {
+  border: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+  margin-left: 3px;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  right: 7px;
+}
+div.dropdown .btn:hover,
+div.form-select .btn:hover,
+div.dropdown .btn:active,
+div.form-select .btn:active {
+  background-color: #ffffff;
+}
+div.dropdown.is-open i.icon-caret,
+div.form-select.is-open i.icon-caret {
+  border: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+div.dropdown.is-open .sub-menu,
+div.form-select.is-open .sub-menu {
+  display: block;
+}
+div.dropdown select,
+div.form-select select {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity = 0);
+  cursor: pointer;
+}
+div.dropdown .sub-menu,
+div.form-select .sub-menu {
+  width: 100%;
+}
+div.dropdown .sub-menu a,
+div.form-select .sub-menu a {
+  display: block;
+}
+div.dropdown input,
+div.form-select input {
+  width: 100%;
+  padding-right: 22px;
+}
+div.dropdown .dropdown-text{
+    display: block;
+    padding-right: 14px;
+    min-width: 36px;
+    cursor: pointer;
+}
+div.form-select .dropdown-text {
+  display: block;
+  padding-right: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+div.dropdown .dropdown-icon,
+div.form-select .dropdown-icon {
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  cursor: pointer;
+}
+.thumbnail {
+  display: block;
+  padding: 4px;
+  border-radius: 4px;
+}
+.thumbnail img {
+  border-radius: 4px;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.thumbnail h2 {
+  padding: 0;
+}
+.thumbnail.thumbnail-inner > * {
+  float: left;
+  padding: 0;
+  margin: 0;
+}
+.thumbnail.thumbnail-inner > a {
+  width: 80px;
+  margin-right: 10px;
+}

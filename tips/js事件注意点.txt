@@ -1,0 +1,41 @@
+div.onclick=function(){};
+都支持，但这种方式绑定事件有一个缺点：给相同的元素绑定多次事件会覆盖上一次绑定的事件
+
+div.addEventListener(event,handler,capture/bubble[true/false]//默认为false)
+w3c标准事件绑定方式
+有三个阶段：
+	处于事件捕获阶段
+	处于目标对象阶段
+	处于事件冒泡阶段
+浏览器支持：ie9+、chrome、firefox...
+
+div.attachEvent("on+eventName,handler);
+ie中提供的绑定事件方式
+浏览器支持：ie6-ie10
+
+事件解绑：
+	onclick=null
+	removeEventListener(eventName,handler,capture)
+	detachEvent("on"+eventName,handler)
+
+阻止事件冒泡和浏览器的默认行为
+阻止浏览器的默认行为：
+	return false；
+	标准:event.preventDefault()；
+	ie:event.returnValue=false；
+取消冒泡
+	标准:event.stopPropagation()；
+	ie:event.cancelBubble=true；
+
+
+jQuery中绑定事件的方式
+	on(1.7版本以上才有)
+	bind
+	delegate
+	live
+jQuery中的事件解绑
+	off ->on
+	unbind ->bind
+	undelegate ->delegate
+jQuery中的绑定事件
+	用return false来取消默认行为和冒泡

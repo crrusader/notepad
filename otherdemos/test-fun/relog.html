@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>見控制台</title>
+    </head>
+    <body>
+        <script>
+            window.onload = function () {
+                console.log = (function(myLog){
+                    return function(...str){
+                        myLog.call(console,'%c' + '\0' + str + '\0' + '\n','color:red;font-size:13px;');
+                    }
+                }(console.log));
+                function a(){
+                    return 123;
+                }
+                console.log("userName",a(),12);
+            }
+        </script>
+    </body>
+</html>

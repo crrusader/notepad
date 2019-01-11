@@ -1,0 +1,16 @@
+// 判断上滚还是下滚
+	    var p = 0,
+			t = 0;
+	    $(window).scroll(function(e){
+	            p = $(this).scrollTop();
+	            if(t <= p){//下滚
+					console.log('down');
+	            }
+	            else{//上滚
+					console.log('up');
+	            }
+	            setTimeout(function(){
+					t = p;
+				},0);
+    		});
+		});

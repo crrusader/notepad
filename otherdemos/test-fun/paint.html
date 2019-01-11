@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	*{
+        		padding: 0;
+        		margin: 0;
+        	}
+        	body{
+				background-color: grey;
+        	}
+        </style>
+    </head>
+    <body>
+    	<canvas id="cv"></canvas>
+    	<script>
+    		var cv = document.querySelector('#cv');
+    		cv.width=600;
+    		cv.height=400;
+    		cv.style.backgroundColor='white';
+    		var ctx = cv.getContext("2d");
+
+    		cv.onmousedown = function(){
+    			cv.onmousemove = function(e){
+    				var x = e.pageX;
+    				var y = e.pageY;
+    				ctx.lineTo(x,y);
+    				ctx.stroke();
+    			}
+    		}
+    		cv.onmouseup = function(){
+    			cv.onmousemove = function(e){
+                    var x = e.pageX - 50;
+                    var y = e.pageY - 50;
+                    console.log(x,y);
+                    ctx.clearRect(0,0,cv.width,cv.height);
+                    ctx.fillRect(x, y, 100, 100);
+                }
+    			ctx.beginPath();
+    		}
+            cv.onmousemove = function(e){
+                var x = e.pageX - 50;
+                var y = e.pageY - 50;
+                console.log(x,y);
+                ctx.clearRect(0,0,cv.width,cv.height);
+                ctx.fillRect(x, y, 100, 100);
+            }
+            ctx.fillStyle = "silver";
+            ctx.fillRect(10, 10, 100, 100);
+            console.log(ctx.fillStyle);
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+// 修复 ios 弹层（fixed定位）input系列问题
+// 记录屏幕滚动位置
+var windowScrollTopFlag = 0;
+selectMobileLocationDialog.elem.on('dialog.show-before', function() {
+// 更新flag
+windowScrollTopFlag = $(window).scrollTop();
+$('html,body').css({
+'height': '100%'
+});
+selectMobileLocationDialog.elem.css({
+'position': 'absolute',
+'height': window.innerHeight
+});
+});
+selectMobileLocationDialog.elem.on('dialog.hide-before', function() {
+$('html,body').css({
+'height': ''
+});
+// 滚动到记录的位置
+$(window).scrollTop(windowScrollTopFlag);
+});
+// 修复 ios 弹层（fixed定位）input系列问题 end

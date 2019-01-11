@@ -1,0 +1,39 @@
+<!-- 加载方式 -->
+<!-- script标签加上defer = 'defer';为等整个页面加载完毕后才执行 -->
+<script type="text/javascript">
+    // ps:会等待页面所有资源(dom+图片及其他资源)加载完毕后执行，一个页面只能有最后写的一个window.onload生效
+    window.onload = function () {
+        //...
+    }
+    // jq的load和window.onload类似，不过jq的load可以写多个并且生效
+    $(window).load(function () {
+        //...
+    })
+    // ps:和jq的$(function(){})加载机制相同，等待dom树构建完毕就会执行，并且可以写多个
+    document.addEventListener('DOMContentLoaded', function() {
+        //...
+    });
+    document.addEventListener('onreadystatechanged',function () {
+        if(document.readyState === 'complete'){
+            console.log(1);
+        }
+    })
+    // ps:等待dom树绘制完成就执行，速度比较快
+    $(document).ready(function () {
+        //...
+    })
+    // jq的另一种写法
+    $(function () {
+        //...
+    })
+</script>
+<text>
+    DOM文档加载的步骤为
+
+    解析HTML结构。
+    加载外部脚本和样式表文件。
+    解析并执行脚本代码。
+    DOM树构建完成。//DOMContentLoaded
+    加载图片等外部文件。
+    页面加载完毕。//load
+</text>

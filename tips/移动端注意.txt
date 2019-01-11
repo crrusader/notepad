@@ -1,0 +1,26 @@
+//绑定事件，使滑动事件无效
+$("body").bind("touchmove",function(e){
+    e.preventDefault();
+});
+//解除绑定事件，使滑动重新生效
+$("body").unbind("touchmove");
+
+在一个页面的iframe中的内部页面中的js选中原页面中的iframe标签：
+jq做法：$("#z_jump", parent.document)	-->  选中iframe
+
+移动端弹出层之后禁用底部滚动条关闭回到原位置
+$("cli-open").click(function(){
+var scrollTop = document.body.scrollTop;//保存点击前滚动条的位置
+window.onscroll=function(){
+document.body.scrollTop = scrollTop;//赋值给滚动条的位置
+}
+})
+
+$(".cli-close").click(function(){
+window.onscroll=function(){
+document.body.scrollTop=document.body.scrollTop;//关闭后清除保存位置的值
+}
+})
+
+iframe中获取父窗体的window对象
+window.parent	-->  获取到父窗体的window

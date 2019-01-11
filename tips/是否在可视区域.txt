@@ -1,0 +1,17 @@
+isElementInViewport:function(el,offset) {
+	        var box = el.getBoundingClientRect(),
+				offset = offset || 0,
+	            top = (box.top >= 0),
+	            left = (box.left >= 0),
+	            bottom = (box.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset),
+	            right = (box.right <= (window.innerWidth || document.documentElement.clientWidth) + offset);
+	        return (top && left && bottom && right);
+	    }
+
+const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+    const { top, left, bottom, right } = el.getBoundingClientRect();
+    return partiallyVisible ? 
+    ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) && ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth)): top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+}
+
+// partiallyVisible 规定元素是否全部可见还是部分可见

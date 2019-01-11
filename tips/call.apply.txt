@@ -1,0 +1,20 @@
+call、apply方法要求第一个参数必须是一个对象，如果传入的不是对象，那么会在内部被转化为其包装对象
+
+1. call/apply借用的使用方法
+原型对象.方法.apply(obj,["a","b","c"]);
+伪数组需要借用apply使用push方法;
+伪数组：// 识别 DOM中的伪数组: //一部分
+		// 1 document.getElementsByTagName
+		// 2 document.getElementsByClassName
+		// 3 document.querySelectorAll
+		// 4 arguments
+		// 5 dom.childNodes
+		// 6 dom.children
+
+原型对象.方法.call(obj,"a","b","c");
+
+call和apply方法一样，只是添加的参数形式不同
+
+2. call/apply改变this值的使用
+callback.call(obj,a,b)
+callback函数借用call方法，将callback函数中的this值指向了obj，然后传入a和b两个参数

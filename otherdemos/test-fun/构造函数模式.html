@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="box">
+            <div class="reset"></div>
+            <reset></reset>
+        </div>
+        <div class="second">
+            <div class="first"></div>
+            <div class="second"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    function Car(model, year, miles) {
+        this.model = model;
+        this.year = year;
+        this.miles = miles;
+        // 自定义一个output输出内容
+        this.output = function () {
+            return this.model + "走了" + this.miles + "公里";
+        }
+    }
+
+    //方法1：作为函数调用
+    Car("大叔", 2009, 20000);  //添加到window对象上
+    console.log(window.output());
+
+    //方法2：在另外一个对象的作用域内调用
+    var o = new Object();
+    Car.call(o, "Dudu", 2010, 5000);
+    console.log(o.output());
+
+
+    // ------------------
+    // 持续判断 直到符合条件跳出定时器
+    var tips;
+    setTimeout(function () {
+        tips = 'setV';
+    },1000)
+    var timer = setInterval(function () {
+        if(!!tips){
+            console.log('tips has defined!');
+            clearInterval(timer);
+        }
+        // while(!!tips) {
+        //     console.log('tips has defined!');
+        //     clearInterval(timer);
+        // }
+    },0)
+    </script>
+</html>

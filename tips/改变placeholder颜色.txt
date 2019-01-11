@@ -1,0 +1,30 @@
+::placeholder的使用示例:
+
+<input type="text" placeholder="占位符" />
+
+input::-webkit-input-placeholder {//Google
+	color: #999;
+}
+input:-ms-input-placeholder { // IE10+
+	color: #999;
+}
+input:-moz-placeholder { // Firefox4-18
+	color: #999;
+}
+input::-moz-placeholder { // Firefox19+
+	color: #999;
+}
+
+
+input::-webkit-input-placeholder {
+		color: red;
+		}
+		input:-moz-placeholder{
+		color: red;
+		}
+		input::-moz-placeholder{
+		color: red;
+		}
+		input:-ms-input-placeholder{
+		color: red;
+		} 

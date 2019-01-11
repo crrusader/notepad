@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>复制的图片加载会影响load进程吗？</title>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                console.log(1);
+                var img = $('img');
+                var imgClone = img.clone();
+                console.time();
+            })
+            $(window).load(function () {
+                console.log(2);
+                var img = $('img');
+                var imgClone = img.clone();
+                $('body').append(imgClone)
+                var imgClone2 = imgClone.clone();
+                $('body').append(imgClone2)
+                $('body').append(imgClone2)
+                $('body').append(imgClone2)
+                console.log(imgClone2);
+                console.timeEnd()
+            })
+            // the result is :img's load process would not influence window's load process
+            // load会在$(function(){})之后执行
+            // dom is ok -> $(function(){ start... }) is end -> $(window).load(function(){}) resource is ok -> end
+        </script>
+    </head>
+    <body>
+        <img src="https://resource.underarmour.cn/resources/images/BannerPic/homepage/banner/Curry4-1108/PAD.jpg" alt="">
+    </body>
+</html>

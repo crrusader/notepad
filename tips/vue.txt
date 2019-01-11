@@ -1,0 +1,25 @@
+一个slot中的子模板只对应一个，那如果写两个template会只渲染后面的template
+
+template上的slot-scope是获取父slot中绑定的属性集合对象
+
+vue不能监测到对象的属性添加或者删除，所以要让视图响应式需要使用vm.$set()方法动态添加
+
+组件内input更新需要触发自身的input事件，使用$emit
+
+slot-scope获取的是slot插槽上用v-bind绑定的属性，是一个对象
+
+this.$router.push({name:'myOrderDetail',params:{orderId:this.$route.params.id}});
+
+.sync修饰符是v-bind和v-on的语法糖，:foo.sync="bar"  =>  :foo="bar"  @update:foo="val=>bar=val"
+
+router-link的tag属性能改变默认a标签成其他标签
+
+router-link的to跳转到一个字符串，:to写对应的路由{ name,path,query,params }
+
+直接路由为path，命名路由为name
+
+调用根级或其他模块的mutations、actions需要带上{root:true}
+
+Vue.prototype.$isServer 为vue内部判断是否在服务端环境运行的一个变量
+
+v-model绑定的时候要注意是否为表单元素，要仔细辨别

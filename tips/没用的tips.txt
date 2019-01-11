@@ -1,0 +1,14 @@
+contentEditable=true;    //可编辑
+designMode="on";	//设计模式，也是可编辑
+document.documentElement -->html
+document.body -->body
+alert(document.lastModified)	//查看最后编辑时间
+direction=ltr/rtl;	//控制文字书写方向
+prompt();  //浏览器弹出一个输入框
+confirm();    //浏览器弹出一个确认取消框
+document.write();console.log();alert();		//输出形式
+变量取名：name有特殊含义，不能取，否则有位置错误存在
+cursor:none;    //隐藏鼠标
+console.table();	//chrome控制台以表格形式打印一个关联数组 team_arr = [[1,2],[3,4]];
+word-wrap:break-word;	//将一行不带空格的英文进行换行
+iframe.scrolling='no'	//取消iframe的边框

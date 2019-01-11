@@ -1,0 +1,35 @@
+dom--文档对象模型,即是--操纵页面元素的工具
+功能
+1、获取页面元素
+	getElementById();
+	get	ByTagName();
+	get	ByClassName();
+
+2、设置元素的属性 -- 元素的属性->标签的属性
+	img.src = "1.jpg";
+	img.title = "";
+	
+	自定义属性
+		getAttribute()
+		setAttribute()
+		removeAttribute()
+3、设置样式
+	box.style.color
+	box.style--> object
+
+4、节点和节点的层次
+	节点：元素、属性、文本、（注释）。
+	元素->节点的属性：nodeType nodeName nodeValue
+	节点的层次：parent/children/sibiling
+
+5、动态创建元素
+	createElement()
+	appendChild()
+	insertBefore()
+
+6、事件
+	onclick、onmouseover
+
+
+元素和节点的区别？
+

@@ -1,0 +1,324 @@
+@charset "utf-8";
+@import "scroll-gallery.css";
+.scroll {
+  position: relative;
+  clear: both !important;
+}
+.scroll:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll:after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.scroll ul {
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+.scroll ul li {
+  width: 100%;
+  height: auto;
+  display: none;
+  position: relative;
+  float: left;
+}
+.scroll ul li:first-child {
+  display: block;
+}
+.scroll .scroller-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.scroll a img {
+  width: 100%;
+  height: auto;
+}
+.scroll.axis-y .scroll-btn-next {
+  bottom: 0;
+  left: 50%;
+  margin: 0 0 0 -50px;
+  padding: 0;
+  top: auto;
+  width: 100px;
+}
+.scroll.axis-y .scroll-btn-prev {
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -50px;
+  padding: 0;
+  width: 100px;
+}
+.scroll-dots {
+  letter-spacing: normal;
+  font-size: 0;
+  text-align: center;
+  width: 100%;
+  bottom: 3%;
+  position: absolute;
+  left: 0;
+  z-index: 6;
+}
+.scroll-dots a {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: #828790;
+  margin: 0 5px;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: -1000px;
+}
+.scroll-dots a.active {
+  background-color: #444444;
+}
+.scroll-dots a.dots-text {
+  background-color: transparent;
+  font-size: 14px;
+  height: auto;
+  text-indent: 0;
+  width: auto;
+  border-radius: 0;
+}
+.scroll-dots a.dots-text.active {
+  background-color: transparent;
+  color: #333333;
+}
+.scroll-dots a i {
+  display: none;
+}
+.scroll-btn-prev,
+.scroll-btn-next {
+  font-size: 25px;
+  padding: 55px 16px;
+  position: absolute;
+  top: 50%;
+  margin-top: -75px;
+  z-index: 5;
+  text-align: center;
+}
+.scroll-btn-prev i,
+.scroll-btn-next i {
+  font-style: normal !important;
+}
+.scroll-btn-prev a,
+.scroll-btn-next a {
+  cursor: pointer;
+  color: #444;
+}
+.scroll-btn-prev a:hover,
+.scroll-btn-next a:hover {
+  text-decoration: none;
+  color: #444;
+}
+.scroll-btn-prev.is-disabled,
+.scroll-btn-next.is-disabled {
+  cursor: default !important;
+}
+.scroll-btn-prev.is-disabled a,
+.scroll-btn-next.is-disabled a {
+  color: #ccc;
+}
+.scroll-btn-prev.is-disabled a:hover,
+.scroll-btn-next.is-disabled a:hover {
+  color: #ccc;
+}
+.scroll-btn-prev {
+  left: 0;
+}
+.scroll-btn-next {
+  right: 0;
+}
+.scroll-background-image {
+  position: relative;
+  z-index: 0;
+}
+.scroll-background-image img {
+  width: 100%;
+  height: 100%;
+}
+.scroll-container {
+  z-index: 1;
+}
+.scroll-container,
+.scroll-container .scroll-link {
+  background: url(../images/blank.gif) repeat scroll 0 0 transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.scroll-container .scroll-link {
+  z-index: 2;
+}
+.scroll-container .scroll-title-component {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+.scroll-container .scroll-title-component span {
+  display: block;
+}
+.scroll-container .scroll-btn-component {
+  font-size: 0;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+.scroll-container div .scroll-btn-cta {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: auto;
+  margin-left: 10px;
+  *width: 120px;
+  position: relative;
+  vertical-align: top;
+}
+.scroll-container div .scroll-btn-cta .sub-menu {
+  min-width: 100%;
+  text-align: left;
+}
+.scroll-container div .scroll-btn-cta ul {
+  font-size: 14px;
+  list-style: outside none none;
+  margin: 0;
+  padding: 5px 0;
+}
+.scroll-container div .scroll-btn-cta li {
+  display: block;
+  float: none;
+}
+.scroll-container div .scroll-btn-cta:first-child {
+  margin-left: 0;
+}
+.scroll-container .scroll-component-content-wrap {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+.scroll-container .scroll-component-content {
+  text-align: right;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.scroll-container .scroll-content-wrap {
+  position: relative;
+  *position: absolute;
+  *top: 50%;
+  right: 0;
+  display: inline-block;
+  z-index: 3;
+  padding: 60px;
+}
+.scroll-container .scroll-content {
+  position: relative;
+  *top: -50%;
+  *right: 0;
+  vertical-align: middle;
+}
+.scroll-container .scroll-content-site-top {
+  vertical-align: top;
+}
+.scroll-container .scroll-content-site-top .scroll-content-wrap {
+  *top: 0;
+}
+.scroll-container .scroll-content-site-top .scroll-content {
+  *top: 0;
+}
+.scroll-container .scroll-content-site-middle {
+  vertical-align: middle;
+}
+.scroll-container .scroll-content-site-middle .scroll-content-wrap {
+  *top: 50%;
+}
+.scroll-container .scroll-content-site-middle .scroll-content {
+  *top: -50%;
+}
+.scroll-container .scroll-content-site-bottom {
+  vertical-align: bottom;
+}
+.scroll-container .scroll-content-site-bottom .scroll-content-wrap {
+  *top: auto;
+  *bottom: 0;
+}
+.scroll-container .scroll-content-site-bottom .scroll-content {
+  *top: auto;
+  *bottom: 0;
+}
+.scroll-container .scroll-content-text-left {
+  text-align: left;
+}
+.scroll-container .scroll-content-text-left .scroll-content-wrap {
+  *left: 0;
+  *right: auto;
+}
+.scroll-container .scroll-content-text-left .scroll-content {
+  *left: 0;
+  *right: auto;
+}
+.scroll-container .scroll-content-text-center {
+  text-align: center;
+}
+.scroll-container .scroll-content-text-center .scroll-content-wrap {
+  *left: 50%;
+  *right: auto;
+}
+.scroll-container .scroll-content-text-center .scroll-content {
+  *left: -50%;
+  *right: auto;
+}
+.scroll-container .scroll-content-text-right {
+  text-align: right;
+}
+.scroll-container .scroll-content-text-right .scroll-content-wrap {
+  *left: auto;
+  *right: 0;
+}
+.scroll-container .scroll-content-text-right .scroll-content {
+  *left: auto;
+  *right: 0;
+}
+.scroll-background-color {
+  height: 100%;
+  left: -30px;
+  padding: 20px 30px;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  background-color: transparent;
+  opacity: 0.7;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: alpha(opacity = 70);
+  z-index: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+@media screen and (max-width: 767px) {
+  .scroll-container-xs {
+    position: relative;
+  }
+  .scroll-container-xs .scroll-component-content {
+    text-align: center;
+  }
+}
+
+/*------------------------------------------------------------------------------*/

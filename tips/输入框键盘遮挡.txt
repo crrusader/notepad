@@ -1,0 +1,10 @@
+//mobile 点击手机号输入框定位
+	$('.e-spice-small .spice-validator-slot input').live('focus', function(e) {
+		var $this = $(this)
+			, $inputParent = $this.parents('.spice-form-group')
+		$inputParent = $inputParent.length > 0 ? $inputParent : $this.parents('.spice-validator-slot')
+		var $inputParentTop = $inputParent.offset().top;
+		$('body, html').animate({
+			scrollTop: $inputParentTop - 50
+		}, 300)
+	})

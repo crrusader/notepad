@@ -1,0 +1,3 @@
+C:\>netstat -aon|findstr "27017"    //查看占用这个端口号的进程号
+TCP 127.0.0.1:27017 0.0.0.0:0 LISTENING 2016
+C:\>tasklist|findstr "2016"         //根据进程号查看程序

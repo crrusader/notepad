@@ -1,0 +1,53 @@
+1.服务器端基本设置
+
+'use strict'
+const net = require('net');
+// 监听用的socket
+let socket = net.createServer();
+socket.on('connection', (connSocket) => {
+    // 当有连接创建，执行此方法
+    // connSocket是负责和客户端收发数据的
+    //发送数据
+    connSocket.write('welcome to my server\t');
+    // 接收数据
+    connSocket.on('data', (content) => {
+        console.log('别人给我发的：' + content);
+        // 服务器发送到客户端内容
+        process.stdin.on('readable', function () {
+            var data = process.stdin.read();
+            if(data === null) {
+                // console.log('请输入一些内容');
+                return;
+            }
+            connSocket.write(data);
+        })
+    })
+})
+socket.listen(8888, function (err) {
+    console.log('正在监听：8888');
+    if(err)throw err;
+})
+
+
+2.客户端基本设置
+
+'use strict'
+const net = require('net');
+let ip = '127.0.0.1';
+let port = 8888;
+let socket = net.createConnection(port, ip, () => {
+    console.log('连接到服务器');
+    socket.write('hello server');
+})
+socket.on('data',(content) => {
+    console.log( '服务器给我发的：'+content);
+})
+process.stdin.on('readable', function () {
+    var data = process.stdin.read();
+    if(data == null) {
+        console.log('请输入一些内容');
+        return;
+    }
+    // 达到和服务器端交流
+    socket.write(data);
+})

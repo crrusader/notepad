@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            :root{
+                --width:60vw;
+                --height:40vh;
+                --transX:translate(-50%,-50%);
+                --half:50%;
+            }
+            html{
+                --primary:#3f3f3f;
+            }
+            body{
+                padding: 0;
+                margin: 0;
+            }
+            .container{
+                position: relative;
+                width: 100vw;
+                height: 100vh;
+            }
+            .box{
+                position: absolute;
+                width: var(--width);
+                height: var(--height);
+                -webkit-transform: var(--transX);
+                -ms-transform: var(--transX);
+                transform: var(--transX);
+                top: var(--half);
+                left: var(--half);
+                background-color:var(--primary,red);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        const docStyle = document.documentElement.style,
+            wW = window.innerWidth,
+            wH = window.innerHeight;
+        document.addEventListener('mousemove', (e) => {
+            let offX = e.clientX / wW,
+                offY = e.clientY / wH,
+                setX = offX.toFixed(3)*1000,
+                setY = offY.toFixed(3)*1000;
+            var color = '#' + setX.toString() + setY.toString();
+            if(color.length != 7){
+                let rand = Math.floor(Math.random()*10),
+                    randNum = rand.toFixed().toString();
+                for (let i = 0; i < 7 - color.length; i++) {
+                    color += randNum;
+                }
+            }
+            docStyle.setProperty('--primary', color);
+        });
+    </script>
+</html>

@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*翻页*/
+.pagination {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 0;
+}
+.pagination .page-numbers {
+  border-radius: 4px;
+  color: #363d4c;
+  margin: 0 2px;
+  padding: 5px 15px;
+  font-size: 14px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+}
+.pagination .page-numbers:hover {
+  text-decoration: none;
+}
+div.pagination .page-numbers span {
+  vertical-align: middle;
+}
+div.pagination .page-numbers .form-input {
+  width: auto;
+  vertical-align: middle;
+  width: 40px;
+  padding: 2px;
+  text-align: center;
+}
+div.pagination .page-numbers .btn {
+  padding: 2px 3px;
+}
+.pagination .dots {
+  background-color: transparent;
+}
+.pagination .is-active {
+  background-color: #363d4c;
+  color: #ffffff;
+}
+.pagination .all-numbers {
+  background-color: transparent;
+  color: #363d4c;
+}

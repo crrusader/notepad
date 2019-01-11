@@ -1,0 +1,11 @@
+axios 返回的是一个promise对象，具体看返回的时机
+1.正在返回：pending
+2.返回成功：resolved
+3.返回失败：reject
+
+async作用是声明函数返回值为一个promise对象
+
+async内的函数遇到await时会等待await后面跟的promise返回结果再执行async内await下面的代码
+
+没有await关键字则按照普通代码顺序依次往下执行
+

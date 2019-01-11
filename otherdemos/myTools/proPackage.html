@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="css/initial.css">
+        <script src="js/tools.js" charset="utf-8"></script>
+        <script src="js/pagination.js" charset="utf-8"></script>
+        <style>
+            hr{
+                padding: 50px 0;
+            }
+            h3{
+                padding-bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <article class="article">
+                <h3>翻页页码可选</h3>
+                <div class="pagination">
+                    <a class="page-numbers page-prev-first">&lt;&lt;</a>
+                    <a class="page-numbers page-prev">&lt;</a>
+                    <a class="page-numbers">1</a>
+                    <a class="page-numbers is-active">2</a>
+                    <a class="page-numbers">3</a>
+                    <span class="page-numbers page-dots">...</span>
+                    <a class="page-numbers">10</a>
+                    <a class="page-numbers page-next">&gt;</a>
+                    <a class="page-numbers page-next-last">&gt;&gt;</a>
+                    <div class="page-numbers">
+                        <div class="dropdown events-dropdown">
+                            <a class="btn">
+                                <span class="dropdown-text">页码</span>
+                                <span class="dropdown-icon">
+                                    <i class="icon icon-caret"></i>
+                                </span>
+                            </a>
+                            <div class="sub-menu tinyscrollbar">
+                                <div class="viewport">
+                                    <div class="overview">
+                                        <ul>
+                                            <li><a>1</a></li>
+                                            <li><a>2</a></li>
+                                            <li><a>3</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="scrollbar">
+                                    <div class="track">
+                                        <div class="thumb">
+                                            <div class="end"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h3>翻页页码可输入</h3>
+                <div class="pagination">
+                    <a class="page-numbers page-prev-first">&lt;&lt;</a>
+                    <a class="page-numbers page-prev">&lt;</a>
+                    <a class="page-numbers">1</a>
+                    <a class="page-numbers is-active">2</a>
+                    <a class="page-numbers">3</a>
+                    <span class="page-numbers page-dots">...</span>
+                    <a class="page-numbers">10</a>
+                    <a class="page-numbers page-next">&gt;</a>
+                    <a class="page-numbers page-next-last">&gt;&gt;</a>
+                    <div class="page-numbers">
+                        <span>到第</span>
+                        <input type="text" class="form-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength = 2>
+                        <span>页</span>
+                        <a class="btn">Go</a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h3>面包屑</h3>
+                <div class="breadcrumb">
+                    <ul class="list-inline">
+                        <li><a href="">首页</a></li>
+                        <li class="divider">&raquo;</li>
+                        <li><a href="">分类页</a></li>
+                        <li class="divider">&raquo;</li>
+                        <li>详细页</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    document.querySelector('.pagination>.page-numbers .form-input').onkeyup = function () {
+        if(this.value > 10){
+            this.value = 10;
+        }else if(this.value === '0'){
+            this.value = 1;
+        }else{
+            this.value = Math.ceil(Math.random()*10);
+        }
+    }
+    var arr = ['1,2,3,4','33'];
+    var arr2 = [];
+    // cc.findCls(arr,'2');
+
+</script>
+<script type="text/javascript">
+    var arr = [552,321,3213,53,13,5131,4];
+    var newArr = [];
+    arr.forEach(function (num) {
+        setTimeout(function () {
+            console.log(num);
+            newArr.push(num);
+        },num)
+    })
+</script>

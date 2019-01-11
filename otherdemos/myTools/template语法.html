@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+
+        <script type="text/javascript">
+            // 转化模板
+            m = {
+                'name':'bhl'
+            }
+
+            var str = '{{m.name}}颠三倒四多所';
+            var c = str.replace(/{{([^{}]*)}}/g, function (src, val) {
+                return new Function('return ' + val)()
+            })
+            console.log(c);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+var callback = function(records) {
+                records.map(function(record) {
+                    console.log('变动 type: ' + record.type);
+                    console.log('变动 target: ' + record.target,record);
+                });
+            };
+            var obser = new MutationObserver(callback);
+            var obj = document.getElementById('right_col_peck');
+            var options = {
+                attributes: true,
+        	    attributeFilter: ['width']
+            };
+            obser.observe(obj, options);//开始监听
+            //obser.disconnect();//停止监听
+            // Ps：MutationObserver所观察的DOM变动（即上面代码的options对象），包含以下类型：
+            // 1、childList：子元素的变动
+            // 2、attributes：属性的变动
+            // 3、characterData：节点内容或节点文本的变动
+            // 4、subtree：所有下属节点（包括子节点和子节点的子节点）的变动

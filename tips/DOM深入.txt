@@ -1,0 +1,29 @@
+innerHtmlSafe
+
+var xml='</a><a onclick="document.documentElement.innerHTML=\'XXX！\'" href="#">lifeng';
+obj.innerHTML = '<a href="#">'+xml+'</a>';
+在原本的a标签中嵌入一个带有点击事件的a标签,点击事件可以使原网页内容变为空白,也可以加入其它！！
+
+样式操作:
+getAttribute>setAttribute>removeAttribute
+
+form:
+label的for和其它表单元素关联用>for="id";
+
+data属性:
+可以设置在标签上
+data-id="12456">设置
+this.dataset.id>获取
+
+自定义好函数后，单独写函数名会引用整个函数体，不需要写()调用。
+
+js中用className设置class的类名
+
+Window.getComputedStyle() 的返回值是一个 CSS2Properties 对象，其属性是只读的。
+
+
+
+
+
+
+
